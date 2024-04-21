@@ -1,0 +1,42 @@
+<!-- db.users.find()
+db.users.find({},{"password":0})
+db.users.find({"gender":"male"})
+db.users.find({"wilaya":16})
+db.books.find()
+db.books.find({},{"title":1, "grade":1,"year":1})
+db.books.find({"year":{$lt:1950}})
+db.books.find({"country":"United kingdom"},{"grade":{$gt:3})
+db.books.find({}).sort({"year":-1).limit(3)
+db.user.updateMany({},{$set:{"type":"client"}})
+db.user.updateMany({"gender":"female"},{$set:{"type":"admin"}})
+db.books.updateMany({"year":{$lt:1900}},{$set:{"type":"old"}})
+db.books.updateMany({"year":{$lt:1900}},{$set:{"type":"modern"}})
+
+db.users.aggregate([
+  { $group : { _id : '$wilaya', totalwilayamembers : { $sum : 1 } } }
+])
+
+db.users.aggregate([
+  { $group : { _id : "$gender", total : { $sum : 1 } } }
+	])
+
+db.books.aggregate([
+{ $group : { _id : "$books", total : { $sum : 1 } } }])
+
+db.books.find({"year":{$lt:1950}}).count()
+
+db.books.find({"year":{$gt:1950}},{"grade":1})
+
+db.books.find([
+$group :{_id:"$country" , average : {$avg : "$grade"}}
+}])
+
+
+db.books.aggregate({
+$group :{_id:"$grade" , somme : {$sum : $reader}, maximum : {$max : "$readers"}, minimum :{$min :"$readers"}  }
+})
+
+
+
+
+ -->
